@@ -24,7 +24,6 @@ const authorReducer = (state = initialState, action) => {
     author.id === action.payload.id ? action.payload : author
   );
 
-
     default:
       return state;
   }

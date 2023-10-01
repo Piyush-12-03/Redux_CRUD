@@ -48,7 +48,10 @@ const AuthorList = () => {
                 <td>
                   <button
                     className="btn btn-primary"
-                    onClick={() => handleUpdate(author)&&setIsUpdateVisible(true)}
+                    onClick={() => {
+          handleUpdate(author.id, author.firstName, author.lastName);
+          setIsUpdateVisible(true);
+        }}
                   >
                     Update
                   </button>
@@ -66,7 +69,7 @@ const AuthorList = () => {
           </tbody>
         </table>
       </div>
-      {<UpdateAuthor author={authors} handleUpdate={handleUpdate} />}
+      {isUpdateVisible && <UpdateAuthor author={authors} handleUpdate={handleUpdate} />}
     </>
   );
 };
